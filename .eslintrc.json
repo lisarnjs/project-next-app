@@ -1,0 +1,66 @@
+{
+  "extends": [
+    "next",
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "plugins": ["@typescript-eslint","prettier"],
+  "env": {
+    "browser": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true // JSX를 파싱할 수 있습니다.
+    },
+    "ecmaVersion": 12, // Modern ECMAScript를 파싱할 수 있습니다.
+    "sourceType": "module" // import, export를 사용할 수 있습니다.
+  },
+  "rules": {
+    // ESLint 규칙을 지정합니다. extends에서 지정된 규칙을 덮어 쓸수도 있습니다.
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "arrow-body-style": "off",
+    "semi": ["warn", "never"],
+    "react/function-component-definition": ["warn", { "namedComponents": "arrow-function" }],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }], // ts파일에서 tsx 구문 허용(Next.js)
+    "react/jsx-indent": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "warn",
+    "react/require-default-props": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off", // 'React' must be in scope when using JSX 에러 지우기(Next.js)
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/order": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [".storybook/**", "src/stories/**"]
+      }
+    ],
+    "react/prop-types": "off",
+    "max-lines": ["warn", 200],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+
+    "no-shadow": "off",
+    "no-unused-expressions": ["warn"],
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/unbound-method": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
+  }
+}
